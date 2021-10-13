@@ -56,7 +56,7 @@ function Equals() {
         ERRline.textContent += " e1"
     }
     if(isNaN(ExpX2)){
-        ERRline.textContent += " X2"
+        ERRline.textContent += " x2"
     }
     if(isNaN(ExpY2)){
         ERRline.textContent += " y2"
@@ -68,7 +68,7 @@ function Equals() {
         ERRline.textContent += " e1"
     }
     if(isNaN(ExpX3)){
-        ERRline.textContent += " X3"
+        ERRline.textContent += " x3"
     }
     if(isNaN(ExpY3)){
         ERRline.textContent += " y3"
