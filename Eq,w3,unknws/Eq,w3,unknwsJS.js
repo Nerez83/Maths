@@ -84,6 +84,7 @@ function Equals() {
     if (isNaN (ExpX1) || isNaN (ExpY1) || isNaN (ExpZ1) || isNaN (Exp1)  || isNaN (ExpX2)  || isNaN (ExpY2) || isNaN (ExpZ2) || isNaN (Exp2) || isNaN(ExpX3) || isNaN (ExpY3) || isNaN (ExpZ3) || isNaN (Exp3) ) {
         console.error ("NaN")
         ERRline.textContent += " is NaN."
+        return
     }
 
     y1 = -ExpY1 / ExpX1
