@@ -1,5 +1,8 @@
 
 function Equals() {
+    
+    const Start = Date.now()
+
     const ExpA = parseInt(document.getElementById("a").value)
     const ExpB = parseInt(document.getElementById("b").value)
     const ExpC = parseInt(document.getElementById("c").value)
@@ -8,8 +11,23 @@ function Equals() {
     let EqX2 = document.getElementById("EqualsLineX2")
     let Eq = document.getElementById("EqualsLine")
     let Diskrim = document.getElementById("Diskriminator")
-
+    let ErrLine = document.getElementById("ErrorLine")
+    ErrLine.textContent = "."
     const Disk = (ExpB * ExpB) - (4 * ExpA * ExpC)
+
+    switch (true) {
+        case (isNaN(ExpA)):
+            ErrLine.textContent += "a "
+        case (isNaN(ExpB)):
+            ErrLine.textContent += "b "
+        case (isNaN(ExpC)):
+            ErrLine.textContent += "c "
+    }
+
+    if(isNaN(ExpA) || isNaN(ExpB) || isNaN(ExpC)) {
+        ErrLine.textContent += "is NaN"
+        return
+    }
 
     Diskrim.textContent = `D = ${Disk}`
 
@@ -32,6 +50,6 @@ function Equals() {
         default:
 
     }
-    console.log([ExpA, ExpB, ExpC, Disk])
-    console.log(ExpB * ExpB)
+
+    console.log(`This operation took aproximately ${Date.now() - Start} ms.`)
 }

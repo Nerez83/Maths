@@ -43,43 +43,43 @@ function Equals() {
     let p3 = 0
     ERRline.textContent = "."
 
-    if(isNaN(ExpX1)){
+    switch (true) {
+    case (isNaN(ExpX1)):
         ERRline.textContent += " x1"
-    }
-    if(isNaN(ExpY1)){
+    
+    case (isNaN(ExpY1)):
         ERRline.textContent += " y1"
-    }
-    if(isNaN(ExpZ1)){
+    
+    case (isNaN(ExpZ1)):
         ERRline.textContent += " z1"
-    }
-    if(isNaN(Exp1)){
+    
+    case (isNaN(Exp1)):
         ERRline.textContent += " e1"
-    }
-    if(isNaN(ExpX2)){
+    
+    case (isNaN(ExpX2)):
         ERRline.textContent += " x2"
-    }
-    if(isNaN(ExpY2)){
+    
+    case (isNaN(ExpY2)):
         ERRline.textContent += " y2"
-    }
-    if(isNaN(ExpZ2)){
+    
+    case (isNaN(ExpZ2)):
         ERRline.textContent += " z2"
-    }
-    if(isNaN(Exp2)){
+    
+    case (isNaN(Exp2)):
         ERRline.textContent += " e1"
-    }
-    if(isNaN(ExpX3)){
+    
+    case (isNaN(ExpX3)):
         ERRline.textContent += " x3"
-    }
-    if(isNaN(ExpY3)){
+    
+    case (isNaN(ExpY3)):
         ERRline.textContent += " y3"
-    }
-    if(isNaN(ExpZ3)){
+    
+    case (isNaN(ExpZ3)):
         ERRline.textContent += " z3"
-    }
-    if(isNaN(Exp3)){
+    
+    case (isNaN(Exp3)):
         ERRline.textContent += " e3"
     }
-
 
     if (isNaN (ExpX1) || isNaN (ExpY1) || isNaN (ExpZ1) || isNaN (Exp1)  || isNaN (ExpX2)  || isNaN (ExpY2) || isNaN (ExpZ2) || isNaN (Exp2) || isNaN(ExpX3) || isNaN (ExpY3) || isNaN (ExpZ3) || isNaN (Exp3) ) {
         console.error ("NaN")
