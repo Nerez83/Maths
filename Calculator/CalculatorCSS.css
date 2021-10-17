@@ -1,0 +1,12 @@
+textarea {
+    width: 200px;
+    height: 25px;
+    resize: none;
+    text-align: center;
+    font-size: 20px;
+}
+button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
