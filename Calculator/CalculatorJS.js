@@ -1,63 +1,83 @@
 
 let equals = document.getElementById("Equals")
+let equals2 = document.getElementById("Equals2")
 let errLine = document.getElementById("ErrorLine")
 
-function err() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
+let NoX = 0
+let NoY = 0
 
-    errLine.textContent = " "
-    if (isNaN(NoX)) {
+function err() {
+
+    errLine.textContent = "."
+    if (document.getElementById("NumberX").value.match(/\D/g)) {
         errLine.textContent += " x"
     }
-    if (isNaN(NoY)) {
+
+    if (document.getElementById("NumberY").value.match(/\D/g)) {
         errLine.textContent += " y"
     }
-    if (isNaN(NoY) || isNaN(NoY)) {
-        errLine.textContent += " is NaN."
-    }
-    return
 
+    if (document.getElementById("NumberX").value.match(/\D/g) || document.getElementById("NumberY").value.match(/\D/g)) {
+        errLine.textContent += " is NaN."
+        equals.textContent = "0"
+        NoX = 0 
+        NoY = 0
+        return
+    }
+
+    NoX = parseInt(document.getElementById("NumberX").value)
+    NoY = parseInt(document.getElementById("NumberY").value)
 }
 
+function foo() {
+    if (equals.textContent == "NaN") {
+        equals.textContent = "0"
+        errLine.textContent = "You haven't entered both numbers."
+    }
+}
 function add() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
+    err()
     equals.textContent = NoX + NoY
+    foo()
 }
 
 function sub() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
+    err()
     equals.textContent = NoX - NoY
+    foo()
 }
 
 function mult() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
+    err()
     equals.textContent = NoX * NoY
+    foo()
 }
 
 function div() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
+    err()
     equals.textContent = NoX / NoY
+    foo()
 }
 
 function pwr() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
+    err()
     equals.textContent = Math.pow(NoX, NoY)
+    foo()
 }
 
 function root() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
-    equals.textContent = Math.pow(NoY, 1/NoX)
- }
+    err()
+    equals.textContent = Math.pow(NoY, 1 / NoX)
+    foo()
+}
 
 function sin() {
-    let NoX = parseInt(document.getElementById("NumberX").value)
-    let NoY = parseInt(document.getElementById("NumberY").value)
-    equals.textContent = Math.log
+    err()
+    equals.textContent = "sin of X = " + Math.sin(NoX)
+    equals2.textContent = " cos of Y = " + Math.cos(NoY)
+    foo()
 }
+
+
+
+
