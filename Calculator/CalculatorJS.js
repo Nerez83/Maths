@@ -7,6 +7,7 @@ let NoX = 0
 let NoY = 0
 
 function err() {
+    equals2.textContent = "0"
 
     errLine.textContent = "."
     if (document.getElementById("NumberX").value.match(/\D/g)) {
@@ -25,8 +26,8 @@ function err() {
         return
     }
 
-    NoX = parseInt(document.getElementById("NumberX").value)
-    NoY = parseInt(document.getElementById("NumberY").value)
+    NoX = parseFloat(document.getElementById("NumberX").value)
+    NoY = parseFloat(document.getElementById("NumberY").value)
 }
 
 function foo() {
@@ -71,10 +72,10 @@ function root() {
     foo()
 }
 
-function sin() {
+function trig() {
     err()
-    equals.textContent = "sin of X = " + Math.sin(NoX)
-    equals2.textContent = " cos of Y = " + Math.cos(NoY)
+    equals.textContent = "sin of X = " + Math.round((Math.sin(NoX))*1000)/1000
+    equals2.textContent = " cos of Y = " + Math.round((Math.cos(NoY))*1000)/1000
     foo()
 }
 

@@ -3,9 +3,9 @@ function Equals() {
     
     const Start = Date.now()
 
-    const ExpA = parseInt(document.getElementById("a").value)
-    const ExpB = parseInt(document.getElementById("b").value)
-    const ExpC = parseInt(document.getElementById("c").value)
+    const ExpA = parseFloat(document.getElementById("a").value)
+    const ExpB = parseFloat(document.getElementById("b").value)
+    const ExpC = parseFloat(document.getElementById("c").value)
 
     let EqX1 = document.getElementById("EqualsLineX1")
     let EqX2 = document.getElementById("EqualsLineX2")
@@ -39,8 +39,8 @@ function Equals() {
             break
         case (Disk > 0):
             Eq.textContent = "Equation has 2 solutions."
-            EqX1.textContent = `x = ${Math.round(((-ExpB + Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${-ExpB / (2 * ExpA)} + √${ Disk}`
-            EqX2.textContent = `x = ${Math.round(((-ExpB - Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${-ExpB / (2 * ExpA)} - √${ Disk}`
+            EqX1.textContent = `x = ${Math.round(((-ExpB + Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${Math.round((-ExpB / (2 * ExpA))*10000)/10000} + √ ${ Disk} / ${2 * ExpA}`
+            EqX2.textContent = `x = ${Math.round(((-ExpB - Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${Math.round((-ExpB / (2 * ExpA))*10000)/10000} - √ ${ Disk} / ${2 * ExpA}`
             break
         case (Disk < 0):
             Eq.textContent = "Equation has 0 solutions."

@@ -2,20 +2,20 @@ function Equals() {
 
     const Start = Date.now()
 
-    let ExpX1 = parseInt(document.getElementById("x1").value)
-    let ExpY1 = parseInt(document.getElementById("y1").value)
-    let ExpZ1 = parseInt(document.getElementById("z1").value)
-    let Exp1 = parseInt(document.getElementById("e1").value)
+    let ExpX1 = parseFloat(document.getElementById("x1").value)
+    let ExpY1 = parseFloat(document.getElementById("y1").value)
+    let ExpZ1 = parseFloat(document.getElementById("z1").value)
+    let Exp1 = parseFloat(document.getElementById("e1").value)
 
-    let ExpX2 = parseInt(document.getElementById("x2").value)
-    let ExpY2 = parseInt(document.getElementById("y2").value)
-    let ExpZ2 = parseInt(document.getElementById("z2").value)
-    let Exp2 = parseInt(document.getElementById("e2").value)
+    let ExpX2 = parseFloat(document.getElementById("x2").value)
+    let ExpY2 = parseFloat(document.getElementById("y2").value)
+    let ExpZ2 = parseFloat(document.getElementById("z2").value)
+    let Exp2 = parseFloat(document.getElementById("e2").value)
 
-    let ExpX3 = parseInt(document.getElementById("x3").value)
-    let ExpY3 = parseInt(document.getElementById("y3").value)
-    let ExpZ3 = parseInt(document.getElementById("z3").value)
-    let Exp3 = parseInt(document.getElementById("e3").value)
+    let ExpX3 = parseFloat(document.getElementById("x3").value)
+    let ExpY3 = parseFloat(document.getElementById("y3").value)
+    let ExpZ3 = parseFloat(document.getElementById("z3").value)
+    let Exp3 = parseFloat(document.getElementById("e3").value)
 
     let EqLine1 = document.getElementById("EqualsLine1")
     let EqLine2 = document.getElementById("EqualsLine2")
@@ -46,39 +46,51 @@ function Equals() {
     switch (true) {
     case (isNaN(ExpX1)):
         ERRline.textContent += " x1"
+        break
     
     case (isNaN(ExpY1)):
         ERRline.textContent += " y1"
+        break
     
     case (isNaN(ExpZ1)):
         ERRline.textContent += " z1"
+        break
     
     case (isNaN(Exp1)):
         ERRline.textContent += " e1"
+        break
     
     case (isNaN(ExpX2)):
         ERRline.textContent += " x2"
+        break
     
     case (isNaN(ExpY2)):
         ERRline.textContent += " y2"
+        break
     
     case (isNaN(ExpZ2)):
         ERRline.textContent += " z2"
+        break
     
     case (isNaN(Exp2)):
         ERRline.textContent += " e1"
+        break
     
     case (isNaN(ExpX3)):
         ERRline.textContent += " x3"
+        break
     
     case (isNaN(ExpY3)):
         ERRline.textContent += " y3"
+        break
     
     case (isNaN(ExpZ3)):
         ERRline.textContent += " z3"
+        break
     
     case (isNaN(Exp3)):
         ERRline.textContent += " e3"
+        break
     }
 
     if (isNaN (ExpX1) || isNaN (ExpY1) || isNaN (ExpZ1) || isNaN (Exp1)  || isNaN (ExpX2)  || isNaN (ExpY2) || isNaN (ExpZ2) || isNaN (Exp2) || isNaN(ExpX3) || isNaN (ExpY3) || isNaN (ExpZ3) || isNaN (Exp3) ) {
