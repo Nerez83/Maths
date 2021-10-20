@@ -20,13 +20,19 @@
     <button onclick="div()">&divide;</button>
     <button onclick="pwr()">x^y</button>
     <button onclick="root()">x&radic;y</button><br>
-    <button id="Trig" onclick="trig()">sin x, cos y</button>
-    <button id="Trig" onclick="trigh()">sinh x, cosh y</button>
-    <button id="Trig" onclick="tg()">tg x, cotg y</button>
-    <br>
+    <div class="dropdown">
+        <button id="dropdown-button">TRIGONOMETRIC FUNCTIONS</button>
+        <div class="dropdown-content">
+        <a onclick="trig()">sin x, cos y</a>
+        <a onclick="trigh()">sinh x, cosh y</a>
+        <a onclick="tg()">tg x, cotg y</a>
+        </div>
+      </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href="../MenuHTML.html">
+        <button id="back-button">BACK</button>
+    </a>
     <h2 id="ErrorLine" >.</h2>
-    <a href="../MenuHTML.html">BACK</a>
-
     <script src='CalculatorJS.js'></script>
 </head>
 <body>
