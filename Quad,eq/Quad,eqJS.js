@@ -12,23 +12,24 @@ function Equals() {
     let Eq = document.getElementById("EqualsLine")
     let Diskrim = document.getElementById("Diskriminator")
     let ErrLine = document.getElementById("ErrorLine")
-    ErrLine.textContent = "."
-    const Disk = (ExpB * ExpB) - (4 * ExpA * ExpC)
+    ErrLine.textContent = ""
 
-    switch (true) {
-        case (isNaN(ExpA)):
-            ErrLine.textContent += "a "
-        case (isNaN(ExpB)):
-            ErrLine.textContent += "b "
-        case (isNaN(ExpC)):
-            ErrLine.textContent += "c "
+    if (document.getElementById("a").value.match(/([^0-9\.+-])/g) || isNaN(ExpA)) {
+        ErrLine.textContent += "a"
+    }
+    if (document.getElementById("b").value.match(/([^0-9\.+-])/g) || isNaN(ExpB)) {
+        ErrLine.textContent += " b"
+    }
+    if (document.getElementById("c").value.match(/([^0-9\.+-])/g) || isNaN(ExpC)) {
+        ErrLine.textContent += " c"
     }
 
-    if(isNaN(ExpA) || isNaN(ExpB) || isNaN(ExpC)) {
-        ErrLine.textContent += "is NaN"
+    if(document.getElementById("a").value.match(/([^0-9\.+-])/g) || isNaN(ExpA) || document.getElementById("b").value.match(/([^0-9\.+-])/g) || isNaN(ExpB) || document.getElementById("c").value.match(/([^0-9\.+-])/g) || isNaN(ExpC)) {
+        ErrLine.textContent += " is NaN"
         return
     }
 
+    const Disk = (ExpB * ExpB) - (4 * ExpA * ExpC)
     Diskrim.textContent = `D = ${Disk}`
 
     switch (true) {
@@ -39,13 +40,13 @@ function Equals() {
             break
         case (Disk > 0):
             Eq.textContent = "Equation has 2 solutions."
-            EqX1.textContent = `x = ${Math.round(((-ExpB + Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${Math.round((-ExpB / (2 * ExpA))*10000)/10000} + √ ${ Disk} / ${2 * ExpA}`
-            EqX2.textContent = `x = ${Math.round(((-ExpB - Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${Math.round((-ExpB / (2 * ExpA))*10000)/10000} - √ ${ Disk} / ${2 * ExpA}`
+            EqX1.textContent = `x = ${Math.round(((-ExpB + Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${Math.round((-ExpB / (2 * ExpA))*10000)/10000} + √ ${ Math.round(Disk * 10000) / 10000} / ${Math.round(2 * ExpA * 10000)/10000}`
+            EqX2.textContent = `x = ${Math.round(((-ExpB - Math.sqrt(Disk)) / (2 * ExpA)) * 10000) / 10000} = ${Math.round((-ExpB / (2 * ExpA))*10000)/10000} - √ ${ Math.round(Disk * 10000) / 10000} / ${Math.round(2 * ExpA * 10000)/10000}`
             break
         case (Disk < 0):
             Eq.textContent = "Equation has 0 solutions."
-            EqX1.textContent = `x = ${Math.round((-ExpB / (2 * ExpA)) * 10000) / 10000} + ${Math.round(Math.sqrt(-Disk) * 10000) / 10000} i = ${-ExpB / (2 * ExpA)} + √${ -Disk} i`
-            EqX2.textContent = `x = ${Math.round((-ExpB / (2 * ExpA)) * 10000) / 10000} - ${Math.round(Math.sqrt(-Disk) * 10000) / 10000} i = ${-ExpB / (2 * ExpA)} - √${ -Disk} i`
+            EqX1.textContent = `x = ${Math.round((-ExpB / (2 * ExpA)) * 10000) / 10000} + ${Math.round(Math.sqrt(-Disk) * 10000) / 10000} i = ${Math.round(-ExpB / (2 * ExpA) * 10000) / 10000} + √${Math.round(-Disk * 10000) / 10000} / ${Math.round(2 * ExpA * 10000) / 10000} i`
+            EqX2.textContent = `x = ${Math.round((-ExpB / (2 * ExpA)) * 10000) / 10000} - ${Math.round(Math.sqrt(-Disk) * 10000) / 10000} i = ${Math.round(-ExpB / (2 * ExpA) * 10000) / 10000} - √${Math.round(-Disk * 10000) / 10000} / ${Math.round(2 * ExpA * 10000) / 10000} i`
             break
         default:
 

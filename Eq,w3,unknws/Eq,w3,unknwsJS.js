@@ -2,6 +2,13 @@ function Equals() {
 
     const Start = Date.now()
 
+    let EqLineX = document.getElementById("EqualsLineX")
+    let EqLineY = document.getElementById("EqualsLineY")
+    let EqLineZ = document.getElementById("EqualsLineZ")
+    let EqLine1 = document.getElementById("EqualsLine1")
+    let EqLine2 = document.getElementById("EqualsLine2")
+    let ERRline = document.getElementById("ErrorLine")
+
     let ExpX1 = parseFloat(document.getElementById("x1").value)
     let ExpY1 = parseFloat(document.getElementById("y1").value)
     let ExpZ1 = parseFloat(document.getElementById("z1").value)
@@ -17,18 +24,61 @@ function Equals() {
     let ExpZ3 = parseFloat(document.getElementById("z3").value)
     let Exp3 = parseFloat(document.getElementById("e3").value)
 
-    let EqLine1 = document.getElementById("EqualsLine1")
-    let EqLine2 = document.getElementById("EqualsLine2")
+    ERRline.textContent = "."
+
+    if (document.getElementById("x1").value.match(/([^0-9\.+-])/g) || isNaN(ExpX1)) {
+        ERRline.textContent += "x1"
+    }
+    else if (document.getElementById("y1").value.match(/([^0-9\.+-])/g) || isNaN(ExpY1)) {
+        ERRline.textContent += " y1"
+    }
+    else if (document.getElementById("z1").value.match(/([^0-9\.+-])/g) || isNaN(ExpZ1)) {
+        ERRline.textContent += " z1"
+    }
+    else if (document.getElementById("e1").value.match(/([^0-9\.+-])/g) || isNaN(Exp1)) {
+        ERRline.textContent += " e1"
+    }
+    else if (document.getElementById("x2").value.match(/([^0-9\.+-])/g) || isNaN(ExpX2)) {
+        ERRline.textContent += "x2"
+    }
+    else if (document.getElementById("y2").value.match(/([^0-9\.+-])/g) || isNaN(ExpY2)) {
+        ERRline.textContent += " y2"
+    }
+    else if (document.getElementById("z2").value.match(/([^0-9\.+-])/g) || isNaN(ExpZ2)) {
+        ERRline.textContent += " z2"
+    }
+    else if (document.getElementById("e2").value.match(/([^0-9\.+-])/g) || isNaN(Exp2)) {
+        ERRline.textContent += " e2"
+    }
+    else if (document.getElementById("x3").value.match(/([^0-9\.+-])/g) || isNaN(ExpX3)) {
+        ERRline.textContent += " x3"
+    }
+    else if (document.getElementById("y3").value.match(/([^0-9\.+-])/g) || isNaN(ExpY3)) {
+        ERRline.textContent += " y3"
+    }
+    else if (document.getElementById("z3").value.match(/([^0-9\.+-])/g) || isNaN(ExpZ3)) {
+        ERRline.textContent += " z3"
+    }
+    else if (document.getElementById("e3").value.match(/([^0-9\.+-])/g) || isNaN(Exp3)) {
+        ERRline.textContent += " e3"
+    }
+
+    if (document.getElementById("x1").value.match(/([^0-9\.+-])/g) || isNaN(ExpX1) || document.getElementById("y1").value.match(/([^0-9\.+-])/g) || isNaN(ExpY1) || document.getElementById("z1").value.match(/([^0-9\.+-])/g) || isNaN(ExpZ1) || document.getElementById("e1").value.match(/([^0-9\.+-])/g) || isNaN(Exp1)  
+    || document.getElementById("x2").value.match(/([^0-9\.+-])/g) || isNaN(ExpX2)  || document.getElementById("y2").value.match(/([^0-9\.+-])/g) || isNaN(ExpY2) || document.getElementById("z2").value.match(/([^0-9\.+-])/g) || isNaN(ExpZ2) || document.getElementById("e2").value.match(/([^0-9\.+-])/g) || isNaN(Exp2) 
+    || document.getElementById("x3").value.match(/([^0-9\.+-])/g) || isNaN(ExpX3) || document.getElementById("y3").value.match(/([^0-9\.+-])/g) || isNaN(ExpY3) || document.getElementById("z3").value.match(/([^0-9\.+-])/g) || isNaN(ExpZ3) || document.getElementById("e3").value.match(/([^0-9\.+-])/g) || isNaN(Exp3) ) {
+        console.error ("NaN")
+        ERRline.textContent += " is NaN."
+        EqLine1.textContent = "0"
+        EqLine2.textContent = "0"
+        EqLineX.textContent = "0"
+        EqLineY.textContent = "0"
+        EqLineZ.textContent = "0"
+        return
+    }
 
     let x = 0
     let y = 0
     let z = 0
-
-    let EqLineX = document.getElementById("EqualsLineX")
-    let EqLineY = document.getElementById("EqualsLineY")
-    let EqLineZ = document.getElementById("EqualsLineZ")
-
-    let ERRline = document.getElementById("ErrorLine")
 
     let y1 = 0
     let z1 = 0
@@ -41,63 +91,6 @@ function Equals() {
 
     let p2 = 0
     let p3 = 0
-    ERRline.textContent = "."
-
-    switch (true) {
-    case (isNaN(ExpX1)):
-        ERRline.textContent += " x1"
-        break
-    
-    case (isNaN(ExpY1)):
-        ERRline.textContent += " y1"
-        break
-    
-    case (isNaN(ExpZ1)):
-        ERRline.textContent += " z1"
-        break
-    
-    case (isNaN(Exp1)):
-        ERRline.textContent += " e1"
-        break
-    
-    case (isNaN(ExpX2)):
-        ERRline.textContent += " x2"
-        break
-    
-    case (isNaN(ExpY2)):
-        ERRline.textContent += " y2"
-        break
-    
-    case (isNaN(ExpZ2)):
-        ERRline.textContent += " z2"
-        break
-    
-    case (isNaN(Exp2)):
-        ERRline.textContent += " e1"
-        break
-    
-    case (isNaN(ExpX3)):
-        ERRline.textContent += " x3"
-        break
-    
-    case (isNaN(ExpY3)):
-        ERRline.textContent += " y3"
-        break
-    
-    case (isNaN(ExpZ3)):
-        ERRline.textContent += " z3"
-        break
-    
-    case (isNaN(Exp3)):
-        ERRline.textContent += " e3"
-        break
-    }
-
-    if (isNaN (ExpX1) || isNaN (ExpY1) || isNaN (ExpZ1) || isNaN (Exp1)  || isNaN (ExpX2)  || isNaN (ExpY2) || isNaN (ExpZ2) || isNaN (Exp2) || isNaN(ExpX3) || isNaN (ExpY3) || isNaN (ExpZ3) || isNaN (Exp3) ) {
-        console.error ("NaN")
-        ERRline.textContent += " is NaN."
-        return
-    }
 
     y1 = -ExpY1 / ExpX1
     z1 = -ExpZ1 / ExpX1
