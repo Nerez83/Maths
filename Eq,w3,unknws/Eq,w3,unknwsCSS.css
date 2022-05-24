@@ -5,8 +5,9 @@ textarea {
     text-align: center;
     font-size: 20px;
 }
+
 button {
-    width: fit-content ;
-    height: fit-content ;
+    width: fit-content;
+    height: fit-content;
     font-size: 20px;
 }

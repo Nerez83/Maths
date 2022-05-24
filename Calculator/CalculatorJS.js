@@ -100,7 +100,3 @@ function tgh() {
     foo()
 }
 
-function test() {
-    console.log("test")
-}
-

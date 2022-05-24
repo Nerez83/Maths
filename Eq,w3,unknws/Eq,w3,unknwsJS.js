@@ -76,6 +76,8 @@ function Equals() {
         return
     }
 
+    let expf = parseInt(document.getElementById("round").value)
+    
     let x = 0
     let y = 0
     let z = 0
@@ -92,20 +94,24 @@ function Equals() {
     let p2 = 0
     let p3 = 0
 
-    y1 = -ExpY1 / ExpX1
-    z1 = -ExpZ1 / ExpX1
-    e1 = -Exp1 / ExpX1
+    function round (num) {
+        return Math.round(num*(10^expf))/10^expf
+    }
+
+    y1 = round(-ExpY1 / ExpX1)
+    z1 = round(-ExpZ1 / ExpX1)
+    e1 = round(-Exp1 / ExpX1)
     const line1 = "x = (" + Math.round(y1*10000)/10000 + ")y + (" + Math.round(z1*10000)/10000 + ")z + (" + Math.round(e1*10000)/10000 + ")"
     EqLine1.textContent = line1
 
-    p2 = ExpX2 * y1 + ExpY2
-    z2 = (ExpX2 * z1 + ExpZ2) / -p2
-    e2 = (ExpX2 * e1 + Exp2) / -p2
+    p2 = round(ExpX2 * y1 + ExpY2)
+    z2 = round((ExpX2 * z1 + ExpZ2) / -p2)
+    e2 = round((ExpX2 * e1 + Exp2) / -p2)
     const line2 = "y = (" + Math.round(z2*10000)/10000 + ")z + (" + Math.round(e2*10000)/10000 + ")"
     EqLine2.textContent = line2
 
-    p3 = (y1 * e2 + e1) * ExpX3 + ExpY3 * e2 + Exp3
-    z3 = (y1 * z2 + z1) * ExpX3 + ExpY3 * z2 + ExpZ3
+    p3 = round((y1 * e2 + e1) * ExpX3 + ExpY3 * e2 + Exp3)
+    z3 = round((y1 * z2 + z1) * ExpX3 + ExpY3 * z2 + ExpZ3)
 
     z = -p3 / z3
     y = z2 * z + e2
