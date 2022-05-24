@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Coil
+    </title>
+    <h1 id="page-title">
+        Coil
+    </h1>
+    <link rel='stylesheet' type='text/css' media='screen' href='PCoilCSS.css'>
+    <script src="PCoilJS.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="body-div">
+        <h2>What do you want to calculate:</h2>
+        <div class="buttons">
+            <button onclick="voltage()">Voltage</button>
+            <button onclick="current()">Current</button>
+            <button onclick="turns()">Turns</button>
+            <button onclick="efficiency()">Efficiency</button>
+        </div>
+        <br>
+        <div class="textareas-titles">
+            <p style="line-height: 36px">
+                U1 [V]<br>
+                I1 [A]<br>
+                N1<br>
+                U2 [V]<br>
+                I2 [A]<br>
+                N2<br>
+                η</p><br>
+            <p id="formula">Formula:</p>
+            <div class="formulas">
+                <p id="volt-form">\(\Large U_2 = {U_1 \over {N_1 \over N_2}} = {U_1 \over a}\)</p>
+                <p id="curr-form">\(\Large I_2 = {U_1 \cdot I_1 \cdot \eta \over U_2} = {P_2 \over U_2}\)</p>
+                <p id="turn-form">\(\Large N_2 = {N_1 \over {U_1 \over U_2}} = {N_1 \over a}\)</p>
+                <p id="eff-form">\(\Large \eta = {U_2 \cdot I_2 \over U_1 \cdot I_1 } = {P_2 \over P_1}\)</p>
+            </div><br>
+            <p id="turn-volt" style="line-height :90px">\(\Large a = {N_1 \over N_2} = {U_1 \over U_2}\)</p>
+        </div>
+        <div class="textareas">
+            <textarea id="volt1" rows="1" placeholder="pri. voltage"></textarea><br>
+            <textarea id="curr1" rows="1" placeholder="pri. current"></textarea><br>
+            <textarea id="turn1" rows="1" placeholder="pri. turns"></textarea><br>
+            <textarea id="volt2" rows="1" placeholder="sec. voltage"></textarea><br>
+            <textarea id="curr2" rows="1" placeholder="sec. current"></textarea><br>
+            <textarea id="turn2" rows="1" placeholder="sec. turns"></textarea><br>
+            <textarea id="eff" rows="1" placeholder="efficiency"></textarea><br>
+        </div>
+        <div class="NaN">
+            <h3 id="volt1-nan" style="margin-top: 4%"> &#60–– This is not a number</h3>
+            <h3 id="curr1-nan"> &#60–– This is not a number</h3>
+            <h3 id="turn1-nan"> &#60–– This is not a number</h3>
+            <h3 id="volt2-nan"> &#60–– This is not a number</h3>
+            <h3 id="curr2-nan"> &#60–– This is not a number</h3>
+            <h3 id="turn2-nan"> &#60–– This is not a number</h3>
+            <h3 id="eff-nan"> &#60–– This is not a number</h3><br>
+            <h2 id="result">Result:</h2>
+        </div>
+    </div>
+    <script>
+        hide()
+        TA()
+    </script>
+</body>
+<footer>
+    <p>Fill out what is highlighted</p>
+    <p id="calc-desc">Calculates only properties of the secondary coil.</p>
+    <a href="../PhysicsHTML.html"><button>BACK</button></a> <button onclick="TA()">CLEAR</button>
+</footer>
+
+</html>
