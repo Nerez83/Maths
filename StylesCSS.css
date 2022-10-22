@@ -16,5 +16,12 @@ button {
     width: fit-content;
     font-size: 20px;
 }
+h3 {
+    margin-top:  2px;
+}
+footer {
+    position:fixed;
+    bottom: 0;
+}
 
 
